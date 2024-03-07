@@ -50,7 +50,7 @@ class Simulator:
         #Returns wavelength in angstroms, flux in erg/cm2/s/AA
         return comb_sed
         
-    def plot_apparent_sed(binary_sed):
+    def plot_apparent_sed(self, binary_sed):
         
         #Input: take binary_sed output from create_apparent_sed
         
