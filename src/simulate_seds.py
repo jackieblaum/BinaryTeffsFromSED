@@ -87,9 +87,11 @@ if __name__ == '__main__':
         A_V = np.random.uniform(0, 1)
         R_V = np.random.uniform(2, 5)
 
+        params = np.array([teff1, teff2, logg1, logg2, lum1, lum2, Z, dist, A_V, R_V])
+        print(params)
+
         # Simulate SEDs for each binary
         binary_sed = sim.create_apparent_sed(teff1, teff2, logg1, logg2, lum1, lum2, Z, dist, A_V, R_V)
         binary_sed.to_csv(f'../data/sims/binary_sed_{i}.csv')
-        params = np.array([teff1, teff2, logg1, logg2, lum1, lum2, Z, dist, A_V, R_V])
         np.save(f'../data/sims/params_{i}.npy', params)
         sim.plot_apparent_sed(binary_sed)
